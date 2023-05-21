@@ -9,9 +9,9 @@ go
 
 -- ELABORACIÓN DE LA REGLA PARA RUC CON FORMATO DEL SRI
 -- se verifica que termine los 3 ultimos digitos en 001 y que los dos primeros digitos sean de las provincias 1 a 24
--- AUTOR: leonardo Carvajal 
+-- AUTOR: leonardo Carvajal-Antonio Villegas
 -- FECHA CREACIÓN: 07/05/2023
--- FECHA ÚLTIMA MODIFICACIÓN: 07/05/2023
+-- FECHA ÚLTIMA MODIFICACIÓN: 21/05/2023
 DROP RULE IF EXISTS ruc_rule
 Go
 
@@ -358,9 +358,9 @@ GO
 -- **************************************************************************************************
 
 -- Trigger que se dispara cuando se inserta o actualiza el stock con un valor menor al stock minimo
--- AUTOR: Leonardo Carvajal
+-- AUTORES: leonardo Carvajal-Antonio Villegas
 -- FECHA CREACIÓN: 07/05/2023
--- FECHA ÚLTIMA MODIFICACIÓN: 07/05/2023
+-- FECHA ÚLTIMA MODIFICACIÓN: 21/05/2023
 DROP TRIGGER IF EXISTS tr_stock_minimo;
 GO
 
@@ -402,9 +402,10 @@ GO
 
 -- trigger que se dispara cuando se inserta o actualiza un registro en la tabla de compras, 
 -- entonces se actualiza sumando el stock en la tabla de productos
--- AUTOR: Leonardo Carvajal
+-- AUTORES: leonardo Carvajal-Antonio Villegas
 -- FECHA CREACIÓN: 07/05/2023
--- FECHA ÚLTIMA MODIFICACIÓN: 07/05/2023
+-- FECHA ÚLTIMA MODIFICACIÓN: 21/05/2023
+
 DROP TRIGGER IF EXISTS tr_actualiza_stock_compra;
 GO
 
@@ -448,9 +449,10 @@ GO
 
 -- trigger que se dispara cuando se elimina un registro en la tabla de compras, 
 -- entonces se actualiza restando el stock en la tabla de productos
--- AUTOR: Leonardo Carvajal
+-- AUTORES: leonardo Carvajal-Antonio Villegas
 -- FECHA CREACIÓN: 07/05/2023
--- FECHA ÚLTIMA MODIFICACIÓN: 07/05/2023
+-- FECHA ÚLTIMA MODIFICACIÓN: 21/05/2023
+
 DROP TRIGGER IF EXISTS tr_actualiza_stock_compra_elimina;
 GO
 
@@ -490,9 +492,10 @@ GO
 -- trigger que se dispara cuando se inserta o actualiza un registro en la tabla de ventas,
 -- entonces se actualiza restando el stock de la tabla de productos
 -- a su vez actualiza el campo monto_final 
--- AUTOR: Leonardo Carvajal
+-- AUTORES: leonardo Carvajal-Antonio Villegas
 -- FECHA CREACIÓN: 07/05/2023
--- FECHA ÚLTIMA MODIFICACIÓN: 07/05/2023
+-- FECHA ÚLTIMA MODIFICACIÓN: 21/05/2023
+
 DROP TRIGGER IF EXISTS tr_actualiza_stock_venta 
 GO
 
@@ -549,9 +552,10 @@ GO
 
 -- trigger que se dispara cuando se elimina un registro en la tabla de ventas,
 -- entonces se actualiza sumando el stock de la tabla de productos
--- AUTOR: Leonardo Carvajal
+-- AUTORES: leonardo Carvajal-Antonio Villegas
 -- FECHA CREACIÓN: 07/05/2023
--- FECHA ÚLTIMA MODIFICACIÓN: 07/05/2023
+-- FECHA ÚLTIMA MODIFICACIÓN: 21/05/2023
+
 DROP TRIGGER IF EXISTS tr_actualiza_stock_venta_elimina;
 GO
 
@@ -591,9 +595,10 @@ GO
 
 -- trigger que se dispara un mail cuando se inserta un registro en la tabal de notificaciones productos,
 -- ese registro se inserta, cuando el stock del producto es menor al stock_minimo 
--- AUTOR: Leonardo Carvajal
+-- AUTORES: leonardo Carvajal-Antonio Villegas
 -- FECHA CREACIÓN: 07/05/2023
--- FECHA ÚLTIMA MODIFICACIÓN: 07/05/2023
+-- FECHA ÚLTIMA MODIFICACIÓN: 21/05/2023
+
 
 DROP TRIGGER IF EXISTS tr_enviar_mail;
 GO
